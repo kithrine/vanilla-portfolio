@@ -137,7 +137,7 @@ ul  { list-style: none; }
 }
 
 .section {
-  padding: 3.5rem 2.5rem;
+  padding: 1rem 1.5rem;
   /* min-height: 100vh; */
   display: flex;
   flex-direction: column;
@@ -353,7 +353,7 @@ ul  { list-style: none; }
   position: relative;
   overflow: hidden;
   padding: 0;
-  min-height: 100vh;
+  min-height: 75vh;
   display: flex;
   align-items: stretch;
 }
@@ -402,14 +402,13 @@ ul  { list-style: none; }
   animation-delay: var(--delay, 0s);
 }
 
-/* Hero content — flex column, full height, left half of viewport */
+/* Hero content — flex column sized by content, left half of viewport */
 .hero-content {
   position: relative;
   z-index: 10;
   display: flex;
   flex-direction: column;
   width: 50%;
-  min-height: 100vh;
   padding: 2.75rem 3rem 4rem;
 }
 
@@ -470,13 +469,14 @@ ul  { list-style: none; }
 /* ─── 7. ABOUT SECTION ──────────────────────────────────────── */
 .about-section .section-card {
   display: grid;
-  grid-template-columns: 200px 1fr auto;
+  /* first column = chibi image width, middle = all remaining space, last = gameboy */
+  grid-template-columns: 250px 1fr auto;
   gap: 2rem;
   align-items: center;
 }
 
 .about-img-wrap {
-  width: 180px; height: 180px;
+  width: 250px; height: 250px;
   border: 2px solid var(--purple);
   border-radius: var(--radius);
   overflow: hidden;
@@ -497,39 +497,34 @@ ul  { list-style: none; }
 
 .about-img { width: 100%; height: 100%; object-fit: cover; }
 
+.about-text {
+  /* fills the entire 1fr column — no text will be clipped */
+  min-width: 0;
+}
+
 .about-text p {
   color: var(--text-muted);
   font-size: 0.92rem;
   line-height: 1.8;
-  max-width: 480px;
+  /* no max-width — use the full grid column so text never cuts off */
 }
 
-/* Gameboy decoration */
+.about-text .btn {
+  margin-top: 1.5rem;
+  display: inline-flex;
+}
+
+/* Gameboy decoration — real image */
 .gameboy-deco {
-  width: 90px;
-  background: linear-gradient(160deg, #1a0035, #0a0020);
-  border: 1px solid var(--purple);
-  border-radius: 12px 12px 20px 20px;
-  padding: 8px;
-  box-shadow: var(--glow-purple);
   flex-shrink: 0;
-  position: relative;
+  align-self: center;
 }
-.gameboy-screen {
-  background: #000d1a;
-  border: 2px solid var(--cyan-dim);
-  border-radius: 6px;
-  height: 60px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  box-shadow: inset 0 0 10px var(--cyan), 0 0 8px var(--cyan);
-}
-.gameboy-heart {
-  color: var(--pink);
-  font-size: 1.6rem;
-  text-shadow: var(--glow-pink);
-  animation: heart-beat 1.5s ease-in-out infinite;
+.gameboy-img {
+  width: 350px;
+  height: auto;
+  image-rendering: pixelated;
+  filter: drop-shadow(0 0 12px var(--purple)) drop-shadow(0 0 24px rgba(139,92,246,0.2));
+  display: block;
 }
 
 /* ─── 8. SKILLS SECTION ─────────────────────────────────────── */
@@ -816,7 +811,7 @@ ul  { list-style: none; }
   background: var(--bg-card);
   border: var(--border-neon);
   border-radius: var(--radius);
-  padding: 2rem 2.5rem;
+  padding: 1rem;
   width: 100%;
   box-shadow: 0 0 40px rgba(139,92,246,0.08);
 }

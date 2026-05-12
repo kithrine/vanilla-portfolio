@@ -32,9 +32,11 @@
   --purple:        #8b5cf6;
   --purple-dim:    #6d28d9;
   --yellow:        #fbbf24;
+  --lemon:         #fde047;
   --green:         #34d399;
   --orange:        #fb923c;
   --blue:          #60a5fa;
+  --lavender:      #c084fc;
 
   --text-primary:  #e2d9f3;
   --text-muted:    #9b8fad;
@@ -549,36 +551,36 @@ ul  { list-style: none; }
 }
 
 .skill-icon {
-  width: 64px; height: 64px;
+  width: 80px; height: 80px;
   border-radius: var(--radius-sm);
   border: 1px solid currentColor;
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: 1.4rem;
-  font-family: var(--font-mono);
-  font-weight: bold;
   transition: transform var(--transition), box-shadow var(--transition);
 }
 
-.skill-icon.cyan   { color: var(--cyan);   border-color: var(--cyan);   background: rgba(0,247,255,0.06); }
-.skill-icon.blue   { color: var(--blue);   border-color: var(--blue);   background: rgba(96,165,250,0.06); }
-.skill-icon.yellow { color: var(--yellow); border-color: var(--yellow); background: rgba(251,191,36,0.06); }
-.skill-icon.green  { color: var(--green);  border-color: var(--green);  background: rgba(52,211,153,0.06); }
-.skill-icon.pink   { color: var(--pink);   border-color: var(--pink);   background: rgba(255,79,216,0.06); }
-.skill-icon.orange { color: var(--orange); border-color: var(--orange); background: rgba(251,146,60,0.06); }
-.skill-icon.purple { color: var(--purple); border-color: var(--purple); background: rgba(139,92,246,0.06); }
+/* DevIcon glyph inherits the card's neon color */
+.skill-icon i {
+  font-size: 2.6rem;
+  color: currentColor;
+  line-height: 1;
+}
+
+.skill-icon.cyan     { color: var(--cyan);     border-color: var(--cyan);     background: rgba(0,247,255,0.06); }
+.skill-icon.blue     { color: var(--blue);     border-color: var(--blue);     background: rgba(96,165,250,0.06); }
+.skill-icon.yellow   { color: var(--yellow);   border-color: var(--yellow);   background: rgba(251,191,36,0.06); }
+.skill-icon.lemon    { color: var(--lemon);    border-color: var(--lemon);    background: rgba(253,224,71,0.06); }
+.skill-icon.green    { color: var(--green);    border-color: var(--green);    background: rgba(52,211,153,0.06); }
+.skill-icon.pink     { color: var(--pink);     border-color: var(--pink);     background: rgba(255,79,216,0.06); }
+.skill-icon.orange   { color: var(--orange);   border-color: var(--orange);   background: rgba(251,146,60,0.06); }
+.skill-icon.purple   { color: var(--purple);   border-color: var(--purple);   background: rgba(139,92,246,0.06); }
+.skill-icon.lavender { color: var(--lavender); border-color: var(--lavender); background: rgba(192,132,252,0.06); }
 
 .skill-item:hover .skill-icon {
   transform: translateY(-4px) scale(1.05);
+  box-shadow: 0 0 18px currentColor;
 }
-.skill-icon.cyan:hover   { box-shadow: 0 0 16px var(--cyan); }
-.skill-icon.blue:hover   { box-shadow: 0 0 16px var(--blue); }
-.skill-icon.yellow:hover { box-shadow: 0 0 16px var(--yellow); }
-.skill-icon.green:hover  { box-shadow: 0 0 16px var(--green); }
-.skill-icon.pink:hover   { box-shadow: 0 0 16px var(--pink); }
-.skill-icon.orange:hover { box-shadow: 0 0 16px var(--orange); }
-.skill-item:hover .skill-icon { box-shadow: 0 0 16px currentColor; }
 
 /* ─── 9. EXPERIENCE / TIMELINE ──────────────────────────────── */
 .timeline {

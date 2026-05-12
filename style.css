@@ -36,7 +36,8 @@
   --green:         #34d399;
   --orange:        #fb923c;
   --blue:          #60a5fa;
-  --lavender:      #c084fc;
+  --lavender:      #8b5cf6;
+  --purple-vivid:  #cc00ff;
 
   --text-primary:  #e2d9f3;
   --text-muted:    #9b8fad;
@@ -574,8 +575,9 @@ ul  { list-style: none; }
 .skill-icon.green    { color: var(--green);    border-color: var(--green);    background: rgba(52,211,153,0.06); }
 .skill-icon.pink     { color: var(--pink);     border-color: var(--pink);     background: rgba(255,79,216,0.06); }
 .skill-icon.orange   { color: var(--orange);   border-color: var(--orange);   background: rgba(251,146,60,0.06); }
-.skill-icon.purple   { color: var(--purple);   border-color: var(--purple);   background: rgba(139,92,246,0.06); }
-.skill-icon.lavender { color: var(--lavender); border-color: var(--lavender); background: rgba(192,132,252,0.06); }
+.skill-icon.purple       { color: var(--purple);       border-color: var(--purple);       background: rgba(139,92,246,0.06); }
+.skill-icon.vivid-purple { color: var(--purple-vivid); border-color: var(--purple-vivid); background: rgba(204,0,255,0.08); }
+.skill-icon.lavender     { color: var(--lavender);     border-color: var(--lavender);     background: rgba(139,92,246,0.06); }
 
 .skill-item:hover .skill-icon {
   transform: translateY(-4px) scale(1.05);
@@ -590,11 +592,11 @@ ul  { list-style: none; }
   position: relative;
 }
 
-/* Horizontal connector line */
+/* Horizontal neon line through all dots */
 .timeline::before {
   content: '';
   position: absolute;
-  top: 1.25rem;
+  top: 1.4rem;
   left: 0; right: 0;
   height: 2px;
   background: linear-gradient(90deg, var(--cyan), var(--pink), var(--cyan), var(--pink));
@@ -607,37 +609,85 @@ ul  { list-style: none; }
   display: flex;
   flex-direction: column;
   align-items: flex-start;
-  gap: 0.75rem;
-  padding-top: 2.5rem;
+  gap: 0.6rem;
+  padding-top: 2.7rem;
+}
+
+/* Dashed vertical connector from dot down to content */
+.timeline-item::after {
+  content: '';
+  position: absolute;
+  left: 5px;
+  top: calc(1.4rem + 10px);
+  width: 2px;
+  height: 1rem;
+  background: repeating-linear-gradient(
+    to bottom,
+    var(--text-dim) 0px, var(--text-dim) 3px,
+    transparent 3px, transparent 6px
+  );
 }
 
 .timeline-year {
   position: absolute;
   top: 0;
   font-family: var(--font-mono);
-  font-size: 0.85rem;
+  font-size: 0.66rem;
   font-weight: 700;
+  letter-spacing: 0.02em;
+  white-space: nowrap;
 }
 .timeline-year.cyan { color: var(--cyan); text-shadow: var(--glow-cyan); }
 .timeline-year.pink { color: var(--pink); text-shadow: var(--glow-pink); }
 
+/* Hollow outlined dot — cyan default, pink variant */
 .timeline-dot {
   position: absolute;
-  top: 1.1rem;
+  top: 1.4rem;
   left: 0;
-  width: 10px; height: 10px;
+  width: 12px; height: 12px;
   border-radius: 50%;
-  background: var(--cyan);
-  border: 2px solid var(--bg);
+  background: var(--bg);
+  border: 2px solid var(--cyan);
   box-shadow: 0 0 8px var(--cyan);
+  transform: translateY(-50%);
   z-index: 1;
+}
+.timeline-dot.dot-pink {
+  border-color: var(--pink);
+  box-shadow: 0 0 8px var(--pink);
+}
+
+/* Content row: illustration left, card right */
+.timeline-content {
+  display: flex;
+  gap: 0.6rem;
+  align-items: flex-start;
+  width: 100%;
+}
+
+/* Neon SVG illustration */
+.timeline-illus {
+  flex-shrink: 0;
+  width: 58px; height: 58px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.timeline-illus.pink { color: var(--pink); }
+.timeline-illus.cyan { color: var(--cyan); }
+.timeline-illus svg {
+  width: 100%; height: 100%;
+  filter: drop-shadow(0 0 5px currentColor);
 }
 
 .timeline-body {
   background: var(--bg-card);
   border: var(--border-neon);
   border-radius: var(--radius-sm);
-  padding: 1rem;
+  padding: 0.75rem;
+  flex: 1;
+  min-width: 0;
   transition: border-color var(--transition), box-shadow var(--transition);
 }
 .timeline-body:hover {
@@ -645,21 +695,22 @@ ul  { list-style: none; }
   box-shadow: 0 0 16px rgba(255,79,216,0.2);
 }
 
-.timeline-icon { font-size: 1.5rem; margin-bottom: 0.4rem; }
-
 .timeline-role {
   font-family: var(--font-mono);
-  font-size: 0.8rem;
+  font-size: 0.76rem;
   color: var(--pink);
-  margin-bottom: 0.25rem;
+  margin-bottom: 0.2rem;
 }
+.timeline-role.cyan { color: var(--cyan); }
+
 .timeline-company {
-  font-size: 0.78rem;
+  font-size: 0.72rem;
   color: var(--cyan);
-  margin-bottom: 0.25rem;
+  margin-bottom: 0.2rem;
 }
+
 .timeline-desc {
-  font-size: 0.75rem;
+  font-size: 0.7rem;
   color: var(--text-muted);
   line-height: 1.5;
 }

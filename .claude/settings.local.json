@@ -3,7 +3,9 @@
     "allow": [
       "WebFetch(domain:nextchapterproject.org)",
       "WebFetch(domain:github.com)",
-      "WebFetch(domain:raw.githubusercontent.com)"
+      "WebFetch(domain:raw.githubusercontent.com)",
+      "Bash(dir \"c:\\\\Users\\\\Kit\\\\OneDrive\\\\Desktop\\\\Tensfeldt\\\\GITHUB\\\\vanilla-portfolio\\\\assets\\\\images\" /b)",
+      "Bash(git add *)"
     ]
   }
 }

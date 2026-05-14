@@ -170,7 +170,7 @@ ul  { list-style: none; }
 }
 
 .logo-img {
-  width: 130px;
+  width: 80px;
   height: auto;
   display: block;
   margin: 0 auto 0.15rem;
@@ -236,6 +236,7 @@ ul  { list-style: none; }
   border-radius: var(--radius-sm);
   padding: 0.75rem;
   font-family: var(--font-mono);
+  overflow: hidden;
 }
 
 .now-playing-label {
@@ -259,13 +260,12 @@ ul  { list-style: none; }
 
 /* Cassette image */
 .cassette {
-  margin: 0.5rem 0;
+  margin: 0.5rem -0.75rem;
 }
 .cassette-img {
-  width: 100%;
+  width: calc(100% + 1.5rem);
   height: auto;
   display: block;
-  border-radius: 4px;
   filter: drop-shadow(0 0 6px var(--pink)) drop-shadow(0 0 14px rgba(255,79,216,0.25));
 }
 

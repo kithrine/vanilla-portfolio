@@ -131,17 +131,18 @@ document.addEventListener('DOMContentLoaded', () => {
   });
 
   /* ── 5. CONTACT FORM ────────────────────────────────────── */
+  const FORMSPREE_ID = 'xqenvlqr'; // ← replace with your Formspree form ID
+
   const form       = document.getElementById('contact-form');
   const formStatus = document.getElementById('form-status');
 
-  form?.addEventListener('submit', (e) => {
+  form?.addEventListener('submit', async (e) => {
     e.preventDefault();
 
     const name    = form.name.value.trim();
     const email   = form.email.value.trim();
     const message = form.message.value.trim();
 
-    // Basic validation
     if (!name || !email || !message) {
       showStatus('Please fill in all fields.', 'var(--pink)');
       return;
@@ -151,17 +152,30 @@ document.addEventListener('DOMContentLoaded', () => {
       return;
     }
 
-    // Simulated send — replace with your own fetch/EmailJS/Formspree call
     const btn = form.querySelector('button[type="submit"]');
     btn.textContent = 'SENDING…';
     btn.disabled = true;
 
-    setTimeout(() => {
-      showStatus('Message sent! I\'ll get back to you soon ✦', 'var(--cyan)');
-      form.reset();
+    try {
+      const res = await fetch(`https://formspree.io/f/${FORMSPREE_ID}`, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json', Accept: 'application/json' },
+        body: JSON.stringify({ name, email, message }),
+      });
+      const data = await res.json();
+      if (data.ok) {
+        showStatus("Message sent! I'll get back to you soon ✦", 'var(--cyan)');
+        form.reset();
+      } else {
+        const err = data.errors?.map(e => e.message).join(', ') || 'Something went wrong.';
+        showStatus(err, 'var(--pink)');
+      }
+    } catch {
+      showStatus('Network error — please try again.', 'var(--pink)');
+    } finally {
       btn.textContent = 'SEND MESSAGE ✦';
       btn.disabled = false;
-    }, 1200);
+    }
   });
 
   function showStatus(msg, color) {

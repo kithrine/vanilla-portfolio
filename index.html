@@ -426,25 +426,31 @@
 
     <!-- CONTACT / FOOTER --------------------------------------- -->
     <footer id="contact" class="section contact-section" aria-labelledby="contact-heading">
-      <div class="section-card contact-card">
-        <h2 id="contact-heading" class="section-title glow-pink">LET'S CONNECT</h2>
-        <p class="contact-sub">Have a project in mind or just want to say hi? Drop me a message.</p>
+      <div class="contact-layout">
+        <div class="section-card contact-card">
+          <h2 id="contact-heading" class="section-title glow-pink">LET'S CONNECT</h2>
+          <p class="contact-sub">Have a project in mind or just want to say hi? Drop me a message.</p>
 
-        <form class="contact-form" id="contact-form" novalidate>
-          <div class="form-row">
-            <label for="name" class="sr-only">Your name</label>
-            <input type="text"  id="name"    name="name"    placeholder="YOUR NAME"    required class="form-input" />
+          <form action="https://formspree.io/f/xqenvlqr" method="POST" class="contact-form" id="contact-form" novalidate>
+            <div class="form-row">
+              <label for="name" class="sr-only">Your name</label>
+              <input type="text"  id="name"    name="name"    placeholder="YOUR NAME"    required class="form-input" />
 
-            <label for="email" class="sr-only">Your email</label>
-            <input type="email" id="email"   name="email"   placeholder="YOUR EMAIL"   required class="form-input" />
-          </div>
+              <label for="email" class="sr-only">Your email</label>
+              <input type="email" id="email"   name="email"   placeholder="YOUR EMAIL"   required class="form-input" />
+            </div>
 
-          <label for="message" class="sr-only">Your message</label>
-          <textarea id="message" name="message" placeholder="YOUR MESSAGE" required rows="5" class="form-input form-textarea"></textarea>
+            <label for="message" class="sr-only">Your message</label>
+            <textarea id="message" name="message" placeholder="YOUR MESSAGE" required rows="5" class="form-input form-textarea"></textarea>
 
-          <button type="submit" class="btn btn-solid w-full">SEND MESSAGE ✦</button>
-          <p class="form-status" id="form-status" aria-live="polite"></p>
-        </form>
+            <button type="submit" class="btn btn-solid w-full">SEND MESSAGE ✦</button>
+            <p class="form-status" id="form-status" aria-live="polite"></p>
+          </form>
+        </div>
+
+        <div class="contact-chibi-col" aria-hidden="true">
+          <img src="assets/images/contact-chibi.png" alt="" class="contact-chibi" />
+        </div>
       </div>
 
       <div class="footer-bar">

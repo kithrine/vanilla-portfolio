@@ -623,7 +623,7 @@ ul  { list-style: none; }
   height: 1rem;
   background: repeating-linear-gradient(
     to bottom,
-    var(--text-dim) 0px, var(--text-dim) 3px,
+    var(--text-dim) 0, var(--text-dim) 3px,
     transparent 3px, transparent 6px
   );
 }

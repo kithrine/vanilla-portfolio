@@ -9,7 +9,7 @@
   <!-- Google Fonts: Press Start 2P (pixel headings) + Share Tech Mono (monospace) + Inter (body) -->
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&family=Share+Tech+Mono&family=Inter:wght@400;600;700&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Permanent+Marker&family=Press+Start+2P&family=Share+Tech+Mono&family=Inter:wght@400;600;700&display=swap" rel="stylesheet" />
 
   <!-- Tailwind CDN (utility helpers) -->
   <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
@@ -38,22 +38,22 @@
     <nav class="sidebar-nav" aria-label="Primary navigation">
       <ul role="list">
         <li><a href="#home"       class="nav-link active" data-section="home">
-          <span class="nav-icon" aria-hidden="true">⌂</span> HOME
+          <span class="nav-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9.5L12 3l9 6.5V20a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1V9.5z"/><polyline points="9,21 9,12 15,12 15,21"/></svg></span>HOME
         </a></li>
         <li><a href="#about"      class="nav-link" data-section="about">
-          <span class="nav-icon" aria-hidden="true">◯</span> ABOUT
+          <span class="nav-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="7" r="4"/><path d="M5 20c0-3.87 3.13-7 7-7s7 3.13 7 7"/></svg></span>ABOUT
         </a></li>
         <li><a href="#skills"     class="nav-link" data-section="skills">
-          <span class="nav-icon" aria-hidden="true">&lt;/&gt;</span> SKILLS
+          <span class="nav-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="7 8 3 12 7 16"/><line x1="10.5" y1="17" x2="13.5" y2="7"/><polyline points="17 8 21 12 17 16"/></svg></span>SKILLS
         </a></li>
         <li><a href="#experience" class="nav-link" data-section="experience">
-          <span class="nav-icon" aria-hidden="true">☰</span> RESUME
+          <span class="nav-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="8" y1="13" x2="16" y2="13"/><line x1="8" y1="17" x2="16" y2="17"/></svg></span>RESUME
         </a></li>
         <li><a href="#projects"   class="nav-link" data-section="projects">
-          <span class="nav-icon" aria-hidden="true">▣</span> PROJECTS
+          <span class="nav-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="7" height="7" rx="1"/><rect x="14" y="3" width="7" height="7" rx="1"/><rect x="3" y="14" width="7" height="7" rx="1"/><rect x="14" y="14" width="7" height="7" rx="1"/></svg></span>PROJECTS
         </a></li>
         <li><a href="#contact"    class="nav-link" data-section="contact">
-          <span class="nav-icon" aria-hidden="true">✉</span> CONTACT
+          <span class="nav-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m2 7 10 7 10-7"/></svg></span>CONTACT
         </a></li>
       </ul>
     </nav>
@@ -64,13 +64,13 @@
       <p class="now-playing-title" id="track-title">Midnight Drive</p>
       <p class="now-playing-sub">HOME</p>
       <div class="cassette" aria-hidden="true">
-        <div class="cassette-body">
-          <div class="cassette-reel left"></div>
-          <div class="cassette-reel right"></div>
-        </div>
+        <img src="assets/images/cassette.png" alt="" class="cassette-img" />
       </div>
       <!-- Equalizer bars -->
       <div class="eq-bars" aria-hidden="true">
+        <span></span><span></span><span></span><span></span>
+        <span></span><span></span><span></span><span></span>
+        <span></span><span></span><span></span><span></span>
         <span></span><span></span><span></span><span></span>
         <span></span><span></span><span></span><span></span>
       </div>

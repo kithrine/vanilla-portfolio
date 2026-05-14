@@ -169,6 +169,16 @@ ul  { list-style: none; }
   animation: logo-pulse 3s ease-in-out infinite;
 }
 
+.logo-img {
+  width: 130px;
+  height: auto;
+  display: block;
+  margin: 0 auto 0.15rem;
+  mix-blend-mode: screen;
+  filter: drop-shadow(0 0 8px var(--pink));
+  animation: logo-pulse 3s ease-in-out infinite;
+}
+
 .logo-sub {
   font-family: var(--font-mono);
   font-size: 0.52rem;
@@ -253,8 +263,7 @@ ul  { list-style: none; }
 }
 .cassette-img {
   width: 100%;
-  max-height: 75px;
-  object-fit: contain;
+  height: auto;
   display: block;
   border-radius: 4px;
   filter: drop-shadow(0 0 6px var(--pink)) drop-shadow(0 0 14px rgba(255,79,216,0.25));
@@ -455,7 +464,7 @@ ul  { list-style: none; }
 
 /* Main text block — pushed down from the prompt */
 .hero-main {
-  margin-top: clamp(3.5rem, 12vh, 7rem);
+  margin-top: clamp(1.5rem, 6vh, 3.5rem);
 }
 
 .hero-hi {
@@ -474,6 +483,26 @@ ul  { list-style: none; }
   letter-spacing: -0.02em;
   margin-bottom: 0.5rem;
   animation: name-glow 3s ease-in-out infinite alternate;
+}
+
+.hero-name-wrap {
+  line-height: 0;
+  margin-bottom: 0.5rem;
+  font-size: 0;
+}
+
+.hero-name-img {
+  height: clamp(4.5rem, 13vw, 9rem);
+  width: auto;
+  display: block;
+  mix-blend-mode: screen;
+  filter: drop-shadow(0 0 14px var(--pink)) drop-shadow(0 0 30px rgba(255,79,216,0.4));
+  animation: name-glow-img 3s ease-in-out infinite alternate;
+}
+
+@keyframes name-glow-img {
+  from { filter: drop-shadow(0 0 10px var(--pink)) drop-shadow(0 0 20px rgba(255,79,216,0.3)); }
+  to   { filter: drop-shadow(0 0 24px var(--pink)) drop-shadow(0 0 55px rgba(255,79,216,0.6)); }
 }
 
 .hero-title {

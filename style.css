@@ -818,7 +818,7 @@ ul  { list-style: none; }
 }
 
 .project-img-wrap {
-  height: 130px;
+  height: 250px;
   overflow: hidden;
   background: linear-gradient(135deg, #1a0030, #0a0020);
   position: relative;
@@ -861,9 +861,24 @@ ul  { list-style: none; }
   min-width: 0;
 }
 .contact-chibi-col {
+  position: relative;
   display: flex;
   align-items: flex-end;
   justify-content: center;
+}
+
+.chibi-star {
+  position: absolute;
+  left: var(--x);
+  top: var(--y);
+  width: var(--s);
+  height: var(--s);
+  border-radius: 50%;
+  background: var(--c);
+  box-shadow: 0 0 calc(var(--s) * 2) var(--c), 0 0 calc(var(--s) * 4) var(--c);
+  animation: chibi-twinkle var(--dur) ease-in-out infinite alternate;
+  animation-delay: var(--dl);
+  pointer-events: none;
 }
 .contact-chibi {
   width: auto;
@@ -875,6 +890,9 @@ ul  { list-style: none; }
   image-rendering: pixelated;
   mix-blend-mode: screen;
   filter: drop-shadow(0 0 10px rgba(255, 79, 216, 0.35));
+  animation: chibi-wobble 5s ease-in-out infinite;
+  position: relative;
+  z-index: 1;
 }
 .contact-sub {
   font-size: 0.88rem;
@@ -1039,6 +1057,19 @@ ul  { list-style: none; }
 @keyframes heart-beat {
   0%, 100% { transform: scale(1); }
   50%       { transform: scale(1.2); }
+}
+
+@keyframes chibi-twinkle {
+  from { opacity: 0.15; transform: scale(0.6); }
+  to   { opacity: 1;    transform: scale(1.4); }
+}
+
+@keyframes chibi-wobble {
+  0%   { transform: rotate(-1.5deg) translateY(0px);  }
+  25%  { transform: rotate(0.8deg)  translateY(-6px); }
+  50%  { transform: rotate(-0.5deg) translateY(2px);  }
+  75%  { transform: rotate(1.2deg)  translateY(-4px); }
+  100% { transform: rotate(-1.5deg) translateY(0px);  }
 }
 
 

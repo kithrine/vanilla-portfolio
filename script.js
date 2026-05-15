@@ -131,16 +131,16 @@ document.addEventListener('DOMContentLoaded', () => {
   });
 
   /* ── 5. CONTACT FORM ────────────────────────────────────── */
-  const FORMSPREE_ID = 'xqenvlqr'; // ← replace with your Formspree form ID
+  const FORMSPREE_ID = 'xqenvlqr';
 
-  const form       = document.getElementById('contact-form');
+  const form = document.getElementById('contact-form');
   const formStatus = document.getElementById('form-status');
 
   form?.addEventListener('submit', async (e) => {
     e.preventDefault();
 
-    const name    = form.name.value.trim();
-    const email   = form.email.value.trim();
+    const name = form.name.value.trim();
+    const email = form.email.value.trim();
     const message = form.message.value.trim();
 
     if (!name || !email || !message) {

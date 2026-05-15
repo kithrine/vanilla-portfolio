@@ -818,7 +818,7 @@ ul  { list-style: none; }
 }
 
 .project-img-wrap {
-  height: 130px;
+  height: 250px;
   overflow: hidden;
   background: linear-gradient(135deg, #1a0030, #0a0020);
   position: relative;
